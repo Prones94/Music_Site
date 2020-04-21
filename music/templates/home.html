@@ -1,0 +1,9 @@
+<h1>All Artists</h1>
+
+<ul>
+    {% for artist in object_list %}
+    <li>
+        <a href="{% url 'artist_detail' artist.id %}">{{ artist.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
