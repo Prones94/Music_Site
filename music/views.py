@@ -26,14 +26,21 @@ def artist_detail(request, artist_id):
     }
     return render(request, 'artist_detail.html', context)
 
-def album_detail(request, artist_id):
-    albums = Album.objects.filter(artist__id=artist_id)
-    songs = Song.objects.get(id=artist_id)
+def album_detail(request, album_id):
+    albums = Album.objects.get(id=album_id)
+    songs = Song.objects.filter(album=album_id)
+    # albums = Album.objects.filter(artist__name='artist_name')
+
     context = {
-        'albums': album,
+        'albums': albums, 
         'songs': songs
     }
     return render(request, 'album_detail.html',context)
 
-# class AlbumDetailView(DetailView):
-#     model = Album
+def song_detail(request, song_id):
+    songs = Song.objects.get(id=song_id)
+
+    context = {
+        'song' : songs
+    }
+    return render(request, 'song_detail.html', context)

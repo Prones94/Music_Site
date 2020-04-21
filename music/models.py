@@ -7,6 +7,7 @@ from django.utils import timezone
 class Artist(models.Model):
     name = models.CharField(max_length=50)
     age = models.IntegerField(blank=True, null=True)
+    # albums = models.ManyToManyField('Album', on_delete=models.CASCADE)
     # albums = models.ManyToManyField('Album')
     hometown = models.CharField(max_length=50)
 

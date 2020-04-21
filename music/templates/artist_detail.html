@@ -1,12 +1,12 @@
 <h1>{{ artist.name }}</h1>
 
-<h3>{{ artist.age }}</h3>
+<h3>Age: {{ artist.age }}</h3>
 
 <h3>Album List for {{ artist.name }}</h3>
 <ol>
     {% for album in albums %}
     <li>
-        <a href="{% url 'album_detail' artist.id %}">{{ album.name }}</a>
+        <a href="{% url 'album_detail' album.id  %}">{{ album.name }}</a>
     </li>
     {% endfor %}
 </ol>
